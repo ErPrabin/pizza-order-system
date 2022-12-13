@@ -1,73 +1,256 @@
+<!DOCTYPE html>
+<html lang="zxx">
 
-
-</body>
-</html>
-<!doctype html>
-<html lang="en">
-  <head>
+<!-- Mirrored from themefie.com/html/foodka/home-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Dec 2022 23:35:38 GMT -->
+<head>
   {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FoodKa - Food Ordering, Delivery & Restuarent Template</title>
+    <!--fivicon icon-->
+    <link rel="icon" href="assets/img/fevicon.png">
 
-  	<title>Online Book Store</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/slick-slide.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/remixicon/remixicon.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-		
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
-		<link rel="stylesheet" href="{% static 'css/style.css' %}">
-  </head>
-  <body>
-		
-		<div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar">
-				<div class="custom-menu">
-					<button type="button" id="sidebarCollapse" class="btn btn-primary">
-	        </button>
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&amp;family=Bebas+Neue&amp;family=Satisfy&amp;family=Quattrocento:wght@400;700&amp;display=swap" rel="stylesheet">
+
+
+</head>
+<body class='sc5'>
+    <!-- preloader area start -->
+    <!-- <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div id="wave1">
+            </div>
+            <div class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+            </div>
         </div>
-	  		<div class="img bg-wrap text-center py-4" style="background-image: url('/static/img/bg.jpg');">
-	  			<div class="user-logo">
-	  				<div class="img" style="background-image: url('/static/images/logo.jpg');"></div>
-	  				<h3>Online Book Store</h3>
-	  			</div>
-	  		</div>
-        {% with request.resolver_match.url_name as url_name %}
-        <ul class="list-unstyled components mb-5">
-          <li class="{% if url_name == 'index' %} active {% endif %}">
-            <a href="/"><span class="fa fa-home mr-3"></span> Home</a>
-          </li>
-          <li class="{% if url_name == 'addbook' %} active {% endif %}"> 
-              <a href="/add-book"><span class="fa fa-download mr-3 notif"></span> Add Book</a>
-          </li>
-          <li class="{% if url_name == 'mybook' %} active {% endif %}">
-            <a href="/my-book"><span class="fa fa-gift mr-3"></span>My Loan booking</a>
-          </li>
-          <li class="{% if url_name == 'addbooklist' %} active {% endif %}">
-            <a href="/my-book-list"><span class="fa fa-trophy mr-3"></span> My Book</a>
-          </li>
-          <li>
-            <a href="#"><span class="fa fa-cog mr-3"></span> Settings</a>
-          </li>
-          <li>
-            <a href="#"><span class="fa fa-support mr-3"></span> Support</a>
-          </li>
-          <li>
-            <a href="/logout"><span class="fa fa-sign-out mr-3"></span> Log Out</a>
-          </li>
-        </ul>
-        {% endwith %}
+    </div> -->
+    <!-- preloader area end -->
 
-    	</nav>
+    <!-- search popup area start -->
+    <!-- <div class="body-overlay" id="body-overlay"></div>
+    <div class="td-search-popup" id="td-search-popup">
+        <form action="https://themefie.com/html/foodka/index.html" class="search-form">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search.....">
+            </div>
+            <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
+        </form>
+    </div> -->
+    <!-- //. search Popup -->
 
-      <div id="content" class="p-4 p-md-5 pt-5">
-        {% block content %} 
+    <!-- navbar start -->
+    <header class="navbar-area">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container nav-container">
+                <div class="responsive-mobile-menu">
+                    <button class="menu toggle-btn d-block d-lg-none" data-target="#themefie_main_menu" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-left"></span>
+                        <span class="icon-right"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="themefie_main_menu">
+                    <ul class="navbar-nav menu-open">
+                        <li class="current-menu-item menu-item-has-children">
+                            <a href="home-1.html">HOME</a>
+                            <ul class="sub-menu ps-0">
+                                <li><a href="home-1.html">Home 01</a></li>
+                                <li><a href="home-2.html">Home 02</a></li>
+                                <li><a href="home-3.html">Home 03</a></li>
+                            </ul>
+                        </li>
+                        <li class="current-menu-item menu-item-has-children">
+                            <a href="#">PAGES</a>
+                            <ul class="sub-menu ps-0">
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="blog-details.html">Blog Details</a></li>
+                                <li><a href="menu.html">Menu</a></li>
+                                <li><a href="menu-list.html">Menu List</a></li>
+                                <li><a href="shop.html">Shop</a></li>
+                                <li><a href="single-product.html">Shop Details</a></li>
+                                <li><a href="cart.html">Cart</a></li>
+                                <li><a href="checkout.html">Checkout</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="about.html">ABOUT US</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">CONTACTS</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="logo">
+                    <a class="main-logo" href="home-1.html"><img src="{% static 'assets/img/logo.png' %} " alt="img"></a>
+                </div>
+                <div class="nav-right-part nav-right-part-mobile">
+                    <ul>
+                        <li><a class="search" href="#"><i class="ri-search-line"></i></a>
+                        </li>
+                        <li class="phone-contact d-md-block d-none"><i class="ri-phone-fill float-start"></i>
+                            +997 509 153 849
+                        </li>
+                        <li class="menu-cart"><a href="cart.html">CART <span>1</span></a></li>
+                        <li>49.50 $</li>
+                    </ul>
+                </div>
+                <div class="nav-right-part nav-right-part-desktop">                    
+                    <ul>
+                        <li><a class="search" href="#"><i class="ri-search-line"></i></a>
+                        </li>
+                        <li class="phone-contact"><i class="ri-phone-fill float-start"></i>
+                            +997 509 153 849
+                        </li>
+                        <li class="menu-cart"><a href="cart.html">CART <span>1</span></a></li>
+                        <li>49.50 $</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- navbar end -->
+    {% block content %} 
 
-        {% endblock %}
-		</div>
+    {% endblock %}
+    <!-- footer area start -->
+    <footer class="footer-area pd-top-100">
+        <div class="footer-inner padding-top-100 padding-bottom-65">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer-widget widget">
+                            <div class="logo">
+                                <img src="assets/img/logo.png" alt="img">
+                            </div>
+                            <ul class="contact_info_list">
+                                <li class="single-info-item">
+                                    <img src="assets/img/icon/location.png" alt="icon">
+                                    <div class="details">
+                                        4920 Trails End Road Ft  United States, FL 33311
+                                    </div>
+                                </li>
+                                <li class="single-info-item">
+                                    <img src="assets/img/icon/envelope.png" alt="icon">
+                                    <div class="details">
+                                        ordernow@foodka.com
+                                    </div>
+                                </li>
+                                <li class="single-info-item">
+                                    <img src="assets/img/icon/phone.png" alt="icon">
+                                    <div class="details">
+                                        +997 509 153 849
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer-widget widget widget_link">
+                            <h4 class="widget-title">Hot Menu</h4>
+                            <ul>
+                                <li><a href="menu-list.html">Burger King Whopper</a></li>
+                                <li><a href="menu-list.html">Five Guys Cheeseburger</a></li>
+                                <li><a href="menu-list.html">KFC Original Recipe Chicken</a></li>
+                                <li><a href="menu-list.html">Wendy's Frosty</a></li>
+                                <li><a href="menu-list.html">McDonald's Happy Meal</a></li>
+                                <li><a href="menu-list.html">Domino's Pepperoni Pizza</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer-widget widget widget_link">
+                            <h4 class="widget-title">Opening Hours</h4>
+                            <ul>
+                                <li>Monday : 09.00am-10.00pm</li>
+                                <li>Tuesday : 09.00am-10.00pm</li>
+                                <li>Wednesday : 09.00am-10.00pm</li>
+                                <li>Thursday : 09.00am-10.00pm</li>
+                                <li>Friday  : 09.00am-10.00pm</li>
+                                <li>Saturday & Sunday : <span>Closed</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer-widget widget widget_instagram_feeds">
+                            <h4 class="widget-title">Instagram Feeds</h4>
+                            <ul>
+                                <li><a href="#"><img src="assets/img/instagram/1.png" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="assets/img/instagram/2.png" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="assets/img/instagram/3.png" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="assets/img/instagram/4.png" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="assets/img/instagram/5.png" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="assets/img/instagram/6.png" alt="instagram" /></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-md-start text-center">
+                        <div class="copyright-area">
+                            <p>© 2021 Foodka. All Rights Reserved by Themefie</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="social-area text-md-end text-center mt-md-0 mt-2">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li> 
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li> 
+                            <li><a href="#"><i class="fab fa-behance"></i></a></li> 
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer area end -->    
 
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/popper.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-  </body>
+    <!-- back-to-top end -->
+    <div class="back-to-top">
+        <span class="back-top"><i class="fas fa-angle-double-up"></i></span>
+    </div>
+
+    
+
+    <!-- all plugins here -->
+    <script src="{% static 'assets/js/jquery.3.6.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/imageloded.min.js' %}"></script>
+    <script src="{% static 'assets/js/counterup.js' %}"></script>
+    <script src="{% static 'assets/js/waypoint.js' %}"></script>
+    <script src="{% static 'assets/js/magnific.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/fontawesome.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl.min.js' %}"></script>
+    <script src="{% static 'assets/js/slick-slider.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/tweenmax.min.js' %}"></script>
+    <!-- main js  -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+<!-- Mirrored from themefie.com/html/foodka/home-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Dec 2022 23:36:26 GMT -->
 </html>

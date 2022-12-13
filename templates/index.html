@@ -1,58 +1,188 @@
 {% extends 'layout.html' %} {% block content %}
 {% load static %}
 
-<h3>Welcome</h3>
-<p>You can see the list of books below. Enjoy!!</p>
-<h2>Book List</h2>
-{% if messages %}
-{% for message in messages %}
-<div {% if message.tags == 'error' %} class="alert alert-danger alert-dismissible" {% else %}
-  class="alert alert-success alert-dismissible" {% endif%}>
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  {{ message }}
-</div>
-{% endfor %}
-{% endif %}
-<table class="table">
-  <thead>
-    <tr>
-      <th>S No.</th>
-      <th>Name</th>
-      <th>Author</th>
-      <th>Publisher</th>
-      <th>Upload By</th>
-      <th>Booking</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for book in books %}
-    <tr {% if book.loanbook and book.loanbook.status %} class="danger" {% endif %}>
-      <td>{{ forloop.counter }}</td>
-      <td>{{ book.name }}</td>
-      <td>{{ book.author }}</td>
-      <td>{{ book.publisher }}</td>
-      <td>{{ book.user.first_name }} {{ book.user.last_name }}</td>
-      <td>{% if book.loanbook and book.loanbook.status %}Booked {% else %} <a href="booking?book_id={{ book.id}}"
-          class="btn btn-primary">Booking Open</a> {% endif %}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-  <div class="pagination">
-    <span class="step-links">
-      {% if books.has_previous %}
-      <a href="?page=1">&laquo; first</a>
-      <a href="?page={{ books.previous_page_number }}">previous</a>
-      {% endif %}
 
-      <span class="current">
-        Page {{ books.number }} of {{ books.paginator.num_pages }}.
-      </span>
+    <!-- Banner Area Start-->
+    <section class="banner-area">
+      <div class="banner-thumb">
+          <img src="{% static 'assets/img/banner/banner.png' %} " alt="img">
+      </div>
+      <div class="banner-bg-img"></div>
+      <div class="banner-shape-1"><img src="{% static 'assets/img/banner/shape-1.png' %} " alt="img"></div>
+      <div class="banner-shape-2"><img src="{% static 'assets/img/banner/shape-2.png' %} " alt="img"></div>
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-8 align-self-center">
+                  <div class="banner-inner text-center">
+                      <h3>Do not miss it!</h3>
+                      <h1>Pizza tastes better than skinny feels.</h1>
+                      <a class="btn btn-secondary" href="shop.html">GET IT NOW</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- Banner Area End --> 
+  
+  <!-- offer Area Start-->
+  <section class="offer-area pd-top-120 pd-bottom-90">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-md-6 align-self-center d-contents">
+                  <div class="single-offer-wrap" style="background-color: var(--main-color);">
+                      <img class="bg-img" src="{% static 'assets/img/offer/1.png' %} " alt="img">
+                      <div class="wrap-details">
+                          <h2>Special Deliciaus </h2>
+                          <h5>Maxican Pizza Testes Better</h5>
+                          <a class="btn btn-white" href="shop.html">ORDER NOW</a>
+                      </div>
+                      <div class="offer-sticker">
+                          <img src="{% static 'assets/img/offer/offer.png' %} " alt="img">
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 align-self-center">
+                  <div class="single-offer-wrap" style="background-color: var(--heading-color);">
+                      <img class="bg-img" src="{% static 'assets/img/offer/2.png' %} " alt="img">
+                      <div class="wrap-details">
+                          <h3>Enjoy Our Delicious Item</h3>
+                          <a class="btn btn-white" href="shop.html">ORDER NOW</a>
+                      </div>
+                  </div>
+                  <div class="single-offer-wrap" style="background-color: #FFEECC">
+                      <div class="animated-img"><img src="{% static 'assets/img/offer/03.png' %} " alt="img"></div>
+                      <div class="animated-img animated-img-2"><img src="{% static 'assets/img/offer/03.png' %}" alt="img"></div>
+                      <div class="overlay-gradient"></div>
+                      <div class="wrap-details">
+                          <h3 class="text-heading">The Fastest In Delivery <span>Food</span></h3>
+                          <a class="btn btn-white" href="shop.html">ORDER NOW</a>
+                      </div>
+                      <img class="bg-img-2" src="{% static 'assets/img/offer/3.png' %}" alt="img">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- offer Area End --> 
 
-      {% if books.has_next %}
-      <a href="?page={{ books.next_page_number }}">next</a>
-      <a href="?page={{ books.paginator.num_pages }}">last &raquo;</a>
-      {% endif %}
-    </span>
-  </div>
-</table>
+  <!-- populer Area Start-->
+  <section class="product-area pd-bottom-90">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="section-title text-center">
+                    <h3 class="sub-title">Our signature</h3>
+                    <h2 class="title">Delicious Deals for Delicious Meals</h2>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-pizza" role="tabpanel" aria-labelledby="pills-pizza-tab">
+                <div class="row justify-content-center">
+                    {% for pizza in pizzas %}
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-item-wrap style-2">
+                            <div class="thumb">
+                                <img src="{% static 'assets/img/home-2/product/05.png' %} " alt="img">
+                                <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
+                            </div>
+                            <div class="wrap-details">
+                                <h5><a href="single-product.html">{{ pizza.name }}</a></h5>
+                                <div class="wrap-footer">
+                                    <div class="rating">
+                                        4.9
+                                        <span class="rating-inner">
+                                            <i class="ri-star-fill ps-0"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-line pe-0"></i>
+                                        </span>
+                                    </div>
+                                </div> 
+                                <div class="btn-area">
+                                    <h6 class="price">${{ pizza.price }}</h6>
+                                    <a class="btn btn-secondary" href="single-product.html">Add to cart <i class="ri-add-line"></i></a>         
+                                </div>                                        
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  <!-- populer Area End -->
+
+  <!-- featured Area Start-->
+  <!-- <section class="featured-area pd-bottom-150" style="background-image: url(assets/img/other/featured.png);">
+      <div class="overlay"></div>
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-lg-6">
+                  <div class="section-title text-center">
+                      <h3 class="sub-title text-secondary">Tasty how The new</h3>
+                      <h2 class="title text-white">Meet Your New Lunchtime Faves</h2>
+                      <a class="btn btn-base" href="menu.html">SEE ALL MENU</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section> -->
+  <!-- featured Area End -->
+
+  <!-- about Area Start-->
+  <section class="about-area pd-top-120 pd-bottom-90">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-lg-6">
+                  <div class="thumb mb-lg-0 mb-4">
+                      <img src="{% static 'assets/img/other/about.png' %}" alt="img">
+                  </div>
+              </div>
+              <div class="col-lg-6">
+                  <div class="section-title text-lg-start text-center">
+                      <h3 class="sub-title">Why choose us</h3>
+                      <h2 class="title">Why we are the best</h2>
+                      <p>A, blandit euismod ullamcorper vestibulum enim habitasse. Ultrices tincidunt scelerisque elit enim. A neque malesuada in tortor eget justo mauris nec dolor. Consequat risus vitae, ac ac et preparation. He wanted to serve burgers, fries and beverages that tasted .</p>
+                  </div>
+                  <div class="row">
+                      <div class="col-sm-6">
+                          <div class="single-about-wrap">
+                              <img src="{% static 'assets/img/icon/1.png' %}" alt="img">
+                              Fresh food
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                          <div class="single-about-wrap">
+                              <img src="{% static 'assets/img/icon/2.png' %}" alt="img">
+                              Fast Delivery
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                          <div class="single-about-wrap">
+                              <img src="{% static 'assets/img/icon/3.png' %}" alt="img">
+                              Quality Maintain
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                          <div class="single-about-wrap">
+                              <img src="{% static 'assets/img/icon/4.png' %}" alt="img">
+                              24/7 Service
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- about Area End -->
+
+  
+
+  <!-- subscribe Area Start-->
+  <!-- subscribe Area End -->
+
+
 {% endblock %}
