@@ -24,4 +24,4 @@ urlpatterns = [
     # path('book/', include('Book.urls')),
     path('', include('basicAuth.urls')),
 
-]
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

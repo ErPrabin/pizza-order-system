@@ -5,7 +5,7 @@ class PizzaAdmin(admin.ModelAdmin):
     list_display=('name','price','description','image','created_at')
     search_fields=['name','price','description']
     
-    readonly_fields=('image',)
+    # readonly_fields=('image',)
 
     def image(self, obj):
         return obj.image
