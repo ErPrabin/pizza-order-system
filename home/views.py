@@ -18,3 +18,13 @@ import json
 def index(request):
     pizzas= Pizza.objects.all()
     return render(request, 'index.html', {'pizzas': pizzas})
+
+def checkout(request,id):
+    pizza= Pizza.objects.get(pk=id)
+    try:
+        return render(request, 'checkout.html', {'pizza': pizza})
+        
+    except Pizza.DoesNotExist :
+        messages.error(request, 'Book Doesnot Exist.')
+        return redirect('/')
+   
