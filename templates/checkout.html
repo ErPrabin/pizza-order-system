@@ -64,41 +64,44 @@
                                         </div>
                                     </form>
                                 </td>
-                                <td id="total_price">${{ pizza.price }}</td>
+                                <td id="price">${{ pizza.price }}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="col-lg-8">
-                <div class="promotional-area">
-                    <form class="default-form-wrap">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6">
-                                <div class="single-input-wrap">
-                                    <input type="text" class="form-control" placeholder="Coupon Code">
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6">
-                                <button type="submit" class="btn btn-secondary">APPLY COUPON</button>
-                            </div>
-                            <div class="col-md-4 col-sm-6 text-md-end">
-                                <button type="submit" class="btn btn-base">UPDATE CART</button>
-                            </div>
+            <div class="checkout-area pd-top-120 pd-bottom-120">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7">
+                            <div class="bill-payment-wrap">
+                                <h5>Billing details
+                                </h5>
+                                <form class="default-form-wrap style-2" method="post" action="/order">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        
+                                        <div class="col-md-6">
+                                            <label>Address</label>
+                                            <div class="single-input-wrap">
+                                                <input type="text" class="form-control" placeholder="Address" value="{{ user.address }}" name="address">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Contact Number</label>
+                                            <div class="single-input-wrap">
+                                                <input type="text" class="form-control" placeholder="Contact Number" value="{{ user.mobile_number }}" name="phone_number">
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="total_price" value="{{ pizza.price }}" name="total_price">
+                                        <input type="hidden" id="total_quantity" value="1" name="quantity">
+                                        <input type="hidden" value="{{ pizza.id }}" name="pizza_id">
+                                    </div>
+                                    <button class="btn btn-secondary w-100" type="submit">Place Order</button>
+                                </form>
+                            </div>                    
                         </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="order-cart-area">
-                    <div class="order-cart">
-                        <h5>Cart totals</h5>
-                        <ul>
-                            <li>Subtotal<span id="total_price">${{ pizza.price }}</span></li>
-                            <li class="total">Total<span id="total_price">${{ pizza.price }}</span></li>
-                        </ul>
                     </div>
-                    <a class="btn btn-secondary w-100" href="#"> PROCEED TO CHECKOUT</a>
                 </div>
             </div>
         </div>

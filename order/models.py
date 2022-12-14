@@ -10,9 +10,9 @@ from accounts.models import CustomUser
 class Order(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
-    order_number=models.CharField(default=None, blank=False, null=False,max_length=200)
     quantity=models.IntegerField(default=None, blank=False, null=False)
     total_price=models.IntegerField(default=None, blank=False, null=False)
+    phone_number=models.CharField(max_length=15,default=None, blank=False, null=False)
     address=models.CharField(max_length=200)
     created_at=models.DateTimeField(auto_now_add=True, blank=True)
     updated_at= models.DateField(default=timezone.now)

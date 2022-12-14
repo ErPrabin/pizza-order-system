@@ -2,8 +2,8 @@ from order.models import Order
 from django.contrib import admin
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display=('order_number','user','pizza','quantity','address','total_price')
-    search_fields=['order_number','address','quantity','total_price']
+    list_display=('user','pizza','quantity','address','phone_number','total_price')
+    search_fields=['address','quantity','phone_number','total_price']
     
 
 # Register your models here.
