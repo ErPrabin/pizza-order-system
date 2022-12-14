@@ -1,0 +1,50 @@
+[
+{
+  "model": "pizza.pizza",
+  "pk": 1,
+  "fields": {
+    "name": "Maxican Pizza",
+    "price": 120,
+    "description": "Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients, which is then baked at a high temperature, traditionally in a wood-fire",
+    "image": "images/pizza/1.png",
+    "created_at": "2022-12-13T15:16:16.789Z",
+    "updated_at": "2022-12-13"
+  }
+},
+{
+  "model": "pizza.pizza",
+  "pk": 2,
+  "fields": {
+    "name": "Margherita Pizza",
+    "price": 130,
+    "description": "Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients, which is then baked at a high temperature, traditionally in a wood-fire",
+    "image": "images/pizza/3.png",
+    "created_at": "2022-12-13T15:17:44.095Z",
+    "updated_at": "2022-12-13"
+  }
+},
+{
+  "model": "pizza.pizza",
+  "pk": 3,
+  "fields": {
+    "name": "Mixed Pizza",
+    "price": 150,
+    "description": "Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients, which is then baked at a high temperature, traditionally in a wood-fire",
+    "image": "images/pizza/2.png",
+    "created_at": "2022-12-13T15:18:17.885Z",
+    "updated_at": "2022-12-13"
+  }
+},
+{
+  "model": "pizza.pizza",
+  "pk": 4,
+  "fields": {
+    "name": "Garlic Chicken Pizza",
+    "price": 150,
+    "description": "Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients, which is then baked at a high temperature, traditionally in a wood-fire",
+    "image": "images/pizza/3_HV1eraR.png",
+    "created_at": "2022-12-13T15:18:55.637Z",
+    "updated_at": "2022-12-13"
+  }
+}
+]
