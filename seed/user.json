@@ -1,0 +1,22 @@
+[
+{
+  "model": "accounts.customuser",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$BbJTz1hKnRv7yai9dJli37$P9PWl6vZS84dbChLc6dXOXVKUTzAfnQxtS8lz5/QDGU=",
+    "last_login": "2022-12-13T15:13:58Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "Admin",
+    "last_name": "Admin",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-12-13T15:13:47Z",
+    "mobile_number": "9842500213",
+    "email": "admin@gmail.com",
+    "address": "Kathmandu, Nepal",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
