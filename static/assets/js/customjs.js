@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    console.log('ready');
   $("#plus").click(function () {
     quantity = parseInt($("#quantity").val()) ;
     price = $("#pizza-price").text();
