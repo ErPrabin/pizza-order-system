@@ -4,7 +4,29 @@
 <div class="checkout-area pd-top-120 pd-bottom-120">
     <div class="container">
         <div class="row justify-content-center">
-            <h5>Order Placement Successful</h5>
+            <div class="col-lg-5">
+                <div class="order-area">
+                    {% for message in messages %}
+                    <h5 class="title">{{ message }}</h5>
+                    {% if message.tags == 'success' %}
+                    <div class="order-product">
+                        <div class="thumb">
+                            <img src="{{ order.pizza.image.url }}" alt="img">
+                        </div>
+                        <div class="details">
+                            <h6>{{ order.pizza.name }}</h6>
+                        </div>
+                    </div>
+                    <ul class="amount">
+                        <li class="total">Total<span>${{ order.total_price }}</span></li>
+                    </ul>
+                    <a class="btn btn-secondary w-100" href="/"> Make Another Order</a>
+                    {% else %}
+                    {% endif %}
+                    {% endfor %}
+
+                </div>
+            </div>
         </div>
     </div>
 </div>

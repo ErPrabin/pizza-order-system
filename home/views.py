@@ -23,23 +23,30 @@ def index(request):
 
 
 def checkout(request, id):
-    pizza = Pizza.objects.get(pk=id)
     try:
+        pizza = Pizza.objects.get(pk=id)
         return render(request, 'checkout.html', {'pizza': pizza})
 
     except Pizza.DoesNotExist:
-        messages.error(request, 'Book Doesnot Exist.')
+        messages.error(request, 'Pizza Doesnot Exist.')
         return redirect('/')
 
 
 def order(request):
-    print(request.POST['quantity'])
     order = Order(user_id=request.user.id, pizza_id=request.POST['pizza_id'], quantity=request.POST[
                   'quantity'],phone_number=request.POST['phone_number'] ,address=request.POST['address'], total_price=request.POST['total_price'])
     order.save()
-    messages.success(request, 'Order Placement Successful')
-    return redirect('/success')
+   
+    return redirect(f'/success/{order.id}')
 
-def success(request):
-    return render(request, 'success.html')
+def success(request,id):
+    try:
+        order=Order.objects.get(pk=id)
+        messages.success(request, 'Order Placement Successful')
+        return render(request, 'success.html',{'order':order})
+    except Order.DoesNotExist:
+        messages.error(request, 'Order Placement Failed')
+        return render(request, 'success.html')
+
+    
 
