@@ -49,4 +49,8 @@ def success(request,id):
         return render(request, 'success.html')
 
     
-
+def about(request):
+    return render(request,'about.html')
+    
+def contact(request):
+    return render(request,'contact.html')

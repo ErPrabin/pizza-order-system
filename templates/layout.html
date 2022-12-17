@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FoodKa - Food Ordering, Delivery & Restuarent Template</title>
     <!--fivicon icon-->
-    <link rel="icon" href="assets/img/fevicon.png">
+    <link rel="icon" href="{% static 'assets/img/fevicon.png' %} ">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %} ">
@@ -68,15 +68,10 @@
                 </div>
                 <div class="collapse navbar-collapse" id="themefie_main_menu">
                     <ul class="navbar-nav menu-open">
-                        <li class="current-menu-item menu-item-has-children">
-                            <a href="home-1.html">HOME</a>
-                            <ul class="sub-menu ps-0">
-                                <li><a href="home-1.html">Home 01</a></li>
-                                <li><a href="home-2.html">Home 02</a></li>
-                                <li><a href="home-3.html">Home 03</a></li>
-                            </ul>
+                        <li class="current-menu-item">
+                            <a href="/">HOME</a>
                         </li>
-                        <li class="current-menu-item menu-item-has-children">
+                        <!-- <li class="current-menu-item menu-item-has-children">
                             <a href="#">PAGES</a>
                             <ul class="sub-menu ps-0">
                                 <li><a href="about.html">About</a></li>
@@ -89,17 +84,17 @@
                                 <li><a href="cart.html">Cart</a></li>
                                 <li><a href="checkout.html">Checkout</a></li>
                             </ul>
+                        </li> -->
+                        <li>
+                            <a href="/about">ABOUT US</a>
                         </li>
                         <li>
-                            <a href="about.html">ABOUT US</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">CONTACTS</a>
+                            <a href="/contact">CONTACTS</a>
                         </li>
                     </ul>
                 </div>
                 <div class="logo">
-                    <a class="main-logo" href="home-1.html"><img src="{% static 'assets/img/logo.png' %} " alt="img"></a>
+                    <a class="main-logo" href="/"><img src="{% static 'assets/img/logo.png' %} " alt="img"></a>
                 </div>
                 <div class="nav-right-part nav-right-part-mobile">
                     <ul>
@@ -140,25 +135,25 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="footer-widget widget">
                             <div class="logo">
-                                <img src="assets/img/logo.png" alt="img">
+                                <img src="{% static 'assets/img/logo.png' %}" alt="img">
                             </div>
                             <ul class="contact_info_list">
                                 <li class="single-info-item">
-                                    <img src="assets/img/icon/location.png" alt="icon">
+                                    <img src="{% static 'assets/img/icon/location.png' %}" alt="icon">
                                     <div class="details">
-                                        4920 Trails End Road Ft  United States, FL 33311
+                                        4920 Trails End Road Ft  Australia, FL 33311
                                     </div>
                                 </li>
-                                <li class="single-info-item">
-                                    <img src="assets/img/icon/envelope.png" alt="icon">
+                                <!-- <li class="single-info-item">
+                                    <img src="{% static 'assets/img/icon/envelope.png' %}" alt="icon">
                                     <div class="details">
                                         ordernow@foodka.com
                                     </div>
-                                </li>
+                                </li> -->
                                 <li class="single-info-item">
-                                    <img src="assets/img/icon/phone.png" alt="icon">
+                                    <img src="{% static 'assets/img/icon/phone.png' %} " alt="icon">
                                     <div class="details">
-                                        +997 509 153 849
+                                        +61 509 153 849
                                     </div>
                                 </li>
                             </ul>
@@ -168,12 +163,12 @@
                         <div class="footer-widget widget widget_link">
                             <h4 class="widget-title">Hot Menu</h4>
                             <ul>
-                                <li><a href="menu-list.html">Burger King Whopper</a></li>
-                                <li><a href="menu-list.html">Five Guys Cheeseburger</a></li>
-                                <li><a href="menu-list.html">KFC Original Recipe Chicken</a></li>
-                                <li><a href="menu-list.html">Wendy's Frosty</a></li>
-                                <li><a href="menu-list.html">McDonald's Happy Meal</a></li>
-                                <li><a href="menu-list.html">Domino's Pepperoni Pizza</a></li>
+                                <li><a href="#">Burger King Whopper</a></li>
+                                <li><a href="#">Five Guys Cheeseburger</a></li>
+                                <li><a href="#">KFC Original Recipe Chicken</a></li>
+                                <li><a href="#">Wendy's Frosty</a></li>
+                                <li><a href="#">McDonald's Happy Meal</a></li>
+                                <li><a href="#">Domino's Pepperoni Pizza</a></li>
                             </ul>
                         </div>
                     </div>
@@ -194,12 +189,12 @@
                         <div class="footer-widget widget widget_instagram_feeds">
                             <h4 class="widget-title">Instagram Feeds</h4>
                             <ul>
-                                <li><a href="#"><img src="assets/img/instagram/1.png" alt="instagram" /></a></li>
-                                <li><a href="#"><img src="assets/img/instagram/2.png" alt="instagram" /></a></li>
-                                <li><a href="#"><img src="assets/img/instagram/3.png" alt="instagram" /></a></li>
-                                <li><a href="#"><img src="assets/img/instagram/4.png" alt="instagram" /></a></li>
-                                <li><a href="#"><img src="assets/img/instagram/5.png" alt="instagram" /></a></li>
-                                <li><a href="#"><img src="assets/img/instagram/6.png" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="{% static 'assets/img/instagram/1.png' %} " alt="instagram" /></a></li>
+                                <li><a href="#"><img src="{% static 'assets/img/instagram/2.png' %}" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="{% static 'assets/img/instagram/3.png' %}" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="{% static 'assets/img/instagram/4.png' %}" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="{% static 'assets/img/instagram/5.png' %}" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="{% static 'assets/img/instagram/6.png' %}" alt="instagram" /></a></li>
                             </ul>
                         </div>
                     </div>
